@@ -7,7 +7,7 @@ from random import sample, choices
 import json
 
 
-products_list = ['arroz', 'feijão', 'açúcar', 'café', 'macarrão', 'sal', 'azeite']
+products_list = ['arroz', 'feijão', 'açúcar', 'café', 'macarrão', 'sal', 'azeite', 'chocolate']
 products = {x: ''.join(str(a) for a in choices(range(10), k=12)) for x in products_list}
 fproduct = Path(__file__).parent/'products.json'
 
