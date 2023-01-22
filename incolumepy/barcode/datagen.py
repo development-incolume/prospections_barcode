@@ -1,18 +1,20 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 __author__ = "@britodfbr"
-from faker import Faker
 from pathlib import Path
-from random import sample, choices
+from random import choices
+from typing import List
 import json
+import logging
 
 
-products_list = ['arroz', 'feijão', 'açúcar', 'café', 'macarrão', 'sal', 'azeite', 'chocolate']
-products = {x: ''.join(str(a) for a in choices(range(10), k=12)) for x in products_list}
-fproduct = Path(__file__).parent/'products.json'
+def datagen(products_list: List[str]):
+    products_list = products_list or ['arroz', 'feijão', 'açúcar', 'café', 'macarrão', 'sal', 'azeite', 'chocolate']
+    products = {x: ''.join(str(a) for a in choices(range(10), k=12)) for x in products_list}
+    fproduct = Path(__file__).parent/'products.json'
 
-try:
-    with open(fproduct, 'x') as f:
-        json.dump(products, f, indent=4)
-except FileExistsError as e:
-    print(e)
+    try:
+        with open(fproduct, 'x') as f:
+            json.dump(products, f, indent=2)
+        return fproduct
+
+    except FileExistsError as e:
+        logging.error(e)
