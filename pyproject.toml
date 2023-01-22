@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "incolumepy.barcode"
 version = "0.2.0a0"
-description = ""
+description = "Prospecção em gerar barcode em python"
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 packages=[
     {include = 'incolumepy/barcode', from=''},
@@ -20,6 +20,7 @@ classifiers = [
   "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
   "Topic :: Education",
   "Topic :: Education :: Testing",
   "Topic :: Utilities"
